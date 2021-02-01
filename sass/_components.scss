@@ -43,6 +43,8 @@
 		border-radius: 50%;
 		padding: 0.6rem;
 		background-color: var(--color-primary-light);
+		position: relative;
+
 
 		&:active {
 
@@ -52,6 +54,21 @@
 		&:hover {
 			outline: none;
 			filter: brightness(.95);
+		}
+
+		&:focus::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 3.6rem;
+			height: 3.6rem;
+			z-index: 200;
+			border: 1px solid blue;
+			border-radius: 62%;
+			transform: translate(-51%,-51%);
+			box-sizing: border-box;
+			box-shadow: 0 0 1px 0px blue;
 		}
 	}
 
@@ -109,5 +126,80 @@
 	&__user-photo {
 		height: 3.6rem;
 		border-radius: 50%;
+	}
+}
+
+.side-nav {
+	margin-top: 1.2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	&__item {
+		position: relative;
+
+		&::before {
+			content: "";
+			height: 100%;
+			width: 4px;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			background-color: var(--color-primary);
+
+			transform: scaleY(0);
+			// center is the default value but we add it as a reminder
+			transform-origin: center;
+
+			transition:	transform .2s ease,
+									width .2s ease-out .2s,
+									background-color .1s;
+		}
+
+		&:hover::before,
+		&--active::before {
+			width: 100%;
+			transform: scaleY(1);
+		}
+
+		&:active::before {
+			background-color: var(--color-primary-light);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			color: var(--color-grey-light-1);
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1.4rem;
+
+			padding: 1.2rem 2rem;
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			position: relative;
+			z-index: 10;
+		}
+	}
+
+	&__icon {
+		width: 2rem;
+		height: 2rem;
+		fill: currentColor;
+		margin-right: 2rem;
+	}
+
+	&__title {
+		color: var(--color-white);
 	}
 }
