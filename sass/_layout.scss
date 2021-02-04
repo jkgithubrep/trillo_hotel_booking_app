@@ -6,7 +6,7 @@
 .header {
 	background-color: var(--color-white);
 	height: 7rem;
-	border-bottom: 1px solid  var(--color-grey-light-4);
+	border-bottom: var(--line);
 
 	display: flex;
 	justify-content: space-between;
@@ -31,8 +31,27 @@
 
 .hotel-view {
 	background-color: var(--color-grey-light-1);
-	height: 100vh;
+	height: calc(100vh - 7rem);
 	overflow-y: auto;
 
 	flex: 1; // takes remaining place on the main axis
+}
+
+.details {
+	display: flex;
+	padding: 4rem;
+}
+
+.description {
+	flex: 0 0 66%;
+	margin-right: 4rem;
+	background-color: var(--color-white);
+	padding: 3rem;
+	box-shadow: var(--shadow-light);
+}
+
+.reviews {
+	flex: 1;
+	background-color: var(--color-white);
+	box-shadow: var(--shadow-light);
 }
