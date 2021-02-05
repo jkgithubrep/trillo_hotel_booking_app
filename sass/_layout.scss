@@ -39,19 +39,26 @@
 
 .details {
 	display: flex;
-	padding: 4rem;
+	padding: var(--margin-details);
 }
 
 .description {
-	flex: 0 0 66%;
-	margin-right: 4rem;
+	flex: 0 0 60%;
+	margin-right: var(--margin-details);
 	background-color: var(--color-white);
 	padding: 3rem;
 	box-shadow: var(--shadow-light);
 }
 
-.reviews {
+.user-reviews {
 	flex: 1;
-	background-color: var(--color-white);
-	box-shadow: var(--shadow-light);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__show-all {
+		flex: 1;
+		text-align: center;
+	}
 }
