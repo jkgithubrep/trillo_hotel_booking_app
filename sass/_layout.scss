@@ -18,6 +18,10 @@
 
 .content {
 	display: flex;
+
+	@include adapt(bp-large) {
+		flex-direction: column;
+	}
 }
 
 .sidebar{
@@ -35,11 +39,21 @@
 	overflow-y: auto;
 
 	flex: 1; // takes remaining place on the main axis
+
+	@include adapt(bp-large) {
+		height: calc(100vh - 7rem - 6rem); // viewport - header - sidebar
+		flex-basis: auto;
+	}
 }
 
 .details {
 	display: flex;
 	padding: var(--margin-details);
+
+	@include adapt(bp-medium) {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .description {
@@ -48,6 +62,11 @@
 	background-color: var(--color-white);
 	padding: 3rem;
 	box-shadow: var(--shadow-light);
+
+	@include adapt(bp-medium) {
+		margin-right: 0;
+		margin-bottom: var(--margin-details);
+	}
 }
 
 .user-reviews {
