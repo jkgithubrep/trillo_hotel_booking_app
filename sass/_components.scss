@@ -40,12 +40,18 @@
 		flex: 0 0 50%;
 	}
 
+	@include adapt(bp-small) {
+		order: 1;
+		flex: 0 0 100%;
+		justify-content: stretch;
+	}
+
 	&__input{
 		font-family: inherit;
 		font-size: inherit;
 		color: inherit;
 
-		height: 2rem;
+		height: 2.4rem;
 		background-color: var(--color-grey-light-2);
 		border: none;
 		border-radius: 100px;
@@ -55,6 +61,11 @@
 		margin-right: -3.8rem; // Keep search icon inside the search bar
 
 		transition: all .3s ease;
+
+		@include adapt(bp-small) {
+			flex-basis: 100%;
+			border-radius: 0;
+		}
 
 		&::placeholder {
 			color: var(--color-grey-dark-2);
@@ -160,7 +171,7 @@
 }
 
 .side-nav {
-	margin-top: 1.2rem;
+	margin-top: 2.2rem;
 
 	display: flex;
 	flex-direction: column;
@@ -311,6 +322,10 @@
 		text-transform: uppercase;
 		font-weight: 300;
 		font-size: 2.4rem;
+
+		@include adapt(bp-small) {
+			font-size: 2rem;
+		}
 	}
 
 	&__stars {
@@ -349,6 +364,10 @@
 		color: var(--color-white);
 
 		padding: 1.2rem 1.6rem;
+
+		@include adapt(bp-small) {
+			padding: 1.2rem 1rem;
+		}
 	}
 
 	&__rating-average{
@@ -360,6 +379,11 @@
 	&__rating-count {
 		font-size: 1.2rem;
 		font-weight: 300;
+		text-align: center;
+
+		@include adapt(bp-small) {
+			font-size: 1rem;
+		}
 	}
 }
 
@@ -412,6 +436,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	&__friends {
+		display: flex;
+	}
 
 	&__photo {
 		width: 4rem;

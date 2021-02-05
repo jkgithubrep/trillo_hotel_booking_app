@@ -134,6 +134,14 @@ body {
   position: sticky;
   top: 0;
 }
+@media only screen and (max-width: 32.25em) {
+  .header {
+    flex-wrap: wrap;
+    height: 11rem;
+    align-content: space-between;
+    padding-top: 1.2rem;
+  }
+}
 
 .content {
   display: flex;
@@ -161,6 +169,11 @@ body {
   .hotel-view {
     height: calc(100vh - 7rem - 6rem);
     flex-basis: auto;
+  }
+}
+@media only screen and (max-width: 32.25em) {
+  .hotel-view {
+    height: calc(100vh - 11rem - 6rem);
   }
 }
 
@@ -238,11 +251,18 @@ body {
     flex: 0 0 50%;
   }
 }
+@media only screen and (max-width: 32.25em) {
+  .search-bar {
+    order: 1;
+    flex: 0 0 100%;
+    justify-content: stretch;
+  }
+}
 .search-bar__input {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  height: 2rem;
+  height: 2.4rem;
   background-color: var(--color-grey-light-2);
   border: none;
   border-radius: 100px;
@@ -250,6 +270,12 @@ body {
   flex-basis: 80%;
   margin-right: -3.8rem;
   transition: all 0.3s ease;
+}
+@media only screen and (max-width: 32.25em) {
+  .search-bar__input {
+    flex-basis: 100%;
+    border-radius: 0;
+  }
 }
 .search-bar__input::placeholder {
   color: var(--color-grey-dark-2);
@@ -333,7 +359,7 @@ body {
 }
 
 .side-nav {
-  margin-top: 1.2rem;
+  margin-top: 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -462,6 +488,11 @@ body {
   font-weight: 300;
   font-size: 2.4rem;
 }
+@media only screen and (max-width: 32.25em) {
+  .overview__heading {
+    font-size: 2rem;
+  }
+}
 .overview__stars {
   display: flex;
   align-items: center;
@@ -490,6 +521,11 @@ body {
   color: var(--color-white);
   padding: 1.2rem 1.6rem;
 }
+@media only screen and (max-width: 32.25em) {
+  .overview__rating {
+    padding: 1.2rem 1rem;
+  }
+}
 .overview__rating-average {
   font-size: 2.4rem;
   line-height: 1;
@@ -498,6 +534,12 @@ body {
 .overview__rating-count {
   font-size: 1.2rem;
   font-weight: 300;
+  text-align: center;
+}
+@media only screen and (max-width: 32.25em) {
+  .overview__rating-count {
+    font-size: 1rem;
+  }
 }
 
 .paragraph:not(:last-of-type) {
@@ -536,6 +578,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.recommand__friends {
+  display: flex;
 }
 .recommand__photo {
   width: 4rem;
