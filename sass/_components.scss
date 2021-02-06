@@ -415,16 +415,20 @@
 			margin-right: .8rem;
 
 
-			// TODO : use a feature query
-			//background-image: url(/img/chevron-thin-right.svg);
-			//background-size: cover;
-			//background-repeat: no-repeat;
+			// Older browsers
+			background-image: url(/img/chevron-thin-right.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
 
-			background-color: var(--color-primary);
-			-webkit-mask-image: url(/img/chevron-thin-right.svg);
-			mask-image: url(/img/chevron-thin-right.svg);
-			-webkit-mask-size: cover;
-			mask-size: cover;
+			// Newer browsers
+			@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+				-webkit-mask-image: url(/img/chevron-thin-right.svg);
+				mask-image: url(/img/chevron-thin-right.svg);
+				-webkit-mask-size: cover;
+				mask-size: cover;
+				background-color: var(--color-primary);
+				background-image: none;
+			}
 		}
 	}
 }
