@@ -1,6 +1,6 @@
 # Trillo - Hotel Booking
 
-This is booking page for a fictitious hotel booking app, built with [Sass](https://sass-lang.com/).
+This is a hotel booking page for a fictitious hotel booking app built with [Sass](https://sass-lang.com/).
 
 ![Demo](demo/complete-demo.gif)
 
